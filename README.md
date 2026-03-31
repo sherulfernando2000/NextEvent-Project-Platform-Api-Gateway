@@ -2,9 +2,16 @@
 
 A reactive API Gateway built with Spring Cloud Gateway (WebFlux). It serves as the single entry point for all client requests, routing traffic to the appropriate microservices discovered via the Service-Registry.
 
+## Student Information
+
+- Student Name: Sherul Dhanushka Fernando
+- Student Number: 2301691014
+- Slack Handle: https://ijse-eca-hdse-69-70.slack.com/team/U0AEH8NS9DW
+- GCP Project ID: project-0ae0d75b-3979-4ebf-be9
+
 ## About
 
-This project is part of the Enterprise Cloud Application (ECA) module in the Higher Diploma in Software Engineering (HDSE) program at the Institute of Software Engineering (IJSE). It is intended exclusively for students enrolled in this program.
+The Api-Gateway acts as the "Front Door" of the NextEvent system. Instead of the frontend communicating directly with multiple microservice ports, it sends all requests to the Gateway.
 
 ## Tech Stack
 
@@ -22,11 +29,12 @@ This project is part of the Enterprise Cloud Application (ECA) module in the Hig
 
 All requests go through `http://localhost:7000`. The gateway forwards them to the registered service instances.
 
-| Route ID | Path Prefix | Target Service |
-|---|---|---|
-| `student-service` | `/api/v1/students/**` | `lb://STUDENT-SERVICE` |
-| `program-service` | `/api/v1/programs/**` | `lb://PROGRAM-SERVICE` |
-| `registration-service` | `/api/v1/enrollments/**` | `lb://ENROLLMENT-SERVICE` |
+
+| Route ID             | Path Prefix                    | Target Service                |
+|---------------------|-------------------------------|-------------------------------|
+| event-service       | /api/v1/events/**             | lb://EVENT-SERVICE            |
+| participant-service | /api/v1/participants/**       | lb://PARTICIPANT-SERVICE      |
+| registration-service| /api/v1/registrations/**      | lb://REGISTRATION-SERVICE     |
 
 ## Service Details
 
